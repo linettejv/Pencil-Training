@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Button } from "./button";
-
+import { ReactComponent as Heart } from "../components-ui/icons/svg/Heart.svg";
 export interface NavigationButtonProps {
   IconComponent?: any;
   id?: string;
@@ -44,9 +44,8 @@ export const NavigationButton: FC<NavigationButtonProps> = (
       <span
         className={`w-full h-full flex items-center whitespace-nowrap space-x-2 justify-start ${textClassOverride}`}
       >
-        <IconComponent className={iconClasses} />
-        <img src={imgSrc} alt="heart" />
-
+        {/* <img src={imgSrc} alt="img" /> */}
+        {IconComponent && <IconComponent className={iconClasses} />}
         <div className="flex space-x-1">
           {label && <span className="leading-[20px] pt-[2px] ">{label}</span>}
           {/* <Crown className="text-yellow-1" /> */}
