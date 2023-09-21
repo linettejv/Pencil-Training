@@ -1,29 +1,34 @@
+import { Heart } from "@/components-ui/icons";
+import { Ideas } from "@/components-ui/icons";
+import { Projects } from "@/components-ui/icons";
+import { Benchmark } from "@/components-ui/icons";
+import { Insights } from "@/components-ui/icons";
+import { AssetLib } from "@/components-ui/icons";
+
 import { NavigationButton } from "./navigation-button";
-import { Heart } from "../components-ui/icons";
 import Link from "next/link";
 
 /* eslint-disable @next/next/no-img-element */
 const Sidenav = () => {
-  // console.log(Heart);
-
   return (
     <div className="w-[180px] min-w-[180px] h-[800px] flex flex-col justify-between bg-white transition-colors  pt-10 pb-3 border-r border-gray-3  z-20">
       <div className="px-2 h-full overflow-y-auto">
         <div className="mb-3">
-          <img className="px-7" src="assets/icons/pencil-logo.png" alt="logo" />
+          <img className="px-7" src="assets/pencil-logo.png" alt="logo" />
           <div className="border-t border-gray-3 h-[1px] w-full my-3" />
-
-          <NavigationButton
-            IconComponent={Heart}
-            label="Projects"
-            isActive={true}
-            imgSrc="assets/icons/Heart.svg"
-          />
+          <Link href="/projects">
+            <NavigationButton
+              IconComponent={Heart}
+              label="Projects"
+              isActive={true}
+              imgSrc={"assets/icons/copy-t.svg"}
+            />
+          </Link>
 
           <div className="border-t border-gray-3 h-[1px] w-full my-3" />
           <Link href="/benchmark">
             <NavigationButton
-              IconComponent={Heart}
+              IconComponent={Insights}
               label="Benchmarks"
               imgSrc="assets/icons/benchmarks'.svg"
             />
@@ -31,7 +36,7 @@ const Sidenav = () => {
           <div className="border-t border-gray-3 h-[1px] w-full my-3" />
 
           <NavigationButton
-            IconComponent={Heart}
+            IconComponent={AssetLib}
             label="Brand library"
             isActive={true}
             imgSrc="assets/icons/brand-kit.svg"
@@ -41,14 +46,14 @@ const Sidenav = () => {
           />
 
           <NavigationButton
-            IconComponent={Heart}
+            IconComponent={Projects}
             label="Asset library"
             isActive={true}
             imgSrc="assets/icons/asset-library.svg"
           />
 
           <NavigationButton
-            IconComponent={Heart}
+            IconComponent={Benchmark}
             label="Template library"
             isActive={true}
             imgSrc="assets/icons/insights.svg"
@@ -57,7 +62,7 @@ const Sidenav = () => {
       </div>
       <div className="px-2 h-full overflow-y-auto">
         <NavigationButton
-          IconComponent={Heart}
+          IconComponent={Ideas}
           // onClick={show}
           label="Get help"
           imgSrc="assets/icons/ideas.svg"
