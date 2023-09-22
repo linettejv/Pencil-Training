@@ -2,20 +2,19 @@
 
 import Sidenav from "@/components/sidenav";
 import CopyScript from "@/components/copyScript";
-import InputControlledComponent from "@/components/input";
-import InputLabelPair from "@/components/inputLabelPair";
-import Label from "@/components/label";
-import InputTextareaPair from "@/components/labelTextareaPair";
-
-import { useState } from "react";
+import { Select } from "@/components/select";
+import { SelectBar } from "@/components/selectBar";
+import { Tooltip } from "@/components-ui/tooltip/tooltip";
+import { QuestionInverse } from "@/components-ui/icons";
 
 export default function Home() {
   return (
-    <div className="flex justify-center items-center h-full">
-      <CopyScript />
-      <div className="flex min-h-screen flex-row  justify-between bg-gray-2">
-        <Sidenav />
-        <div>landing page</div>
+    <div className="flex justify-center items-center bg-gray-2 min-h-screen">
+      <Sidenav />
+      <div className="w-full h-full rounded-lg border border-solid border-gray-3 bg-white px-7 py-3">
+        <SelectBar />
+        <CopyScript />
+        
       </div>
     </div>
   );

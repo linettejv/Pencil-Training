@@ -1,3 +1,4 @@
+import { Arrow } from "@/components-ui/icons";
 import { Popover } from "@headlessui/react";
 import React, { LegacyRef, useState } from "react";
 import { usePopper } from "react-popper";
@@ -36,78 +37,78 @@ export function Select<Option>({
     placement: popperPlacement,
   });
 
+  // eslint-disable-next-line no-console
+  console.log(styles);
+
   return (
-    <Popover>
-      {({ open }) => (
-        <>
-          <div>
-            <Popover.Button
+    <div className="pl-[10px]">
+      <Popover>
+        {({ open }) => (
+          <>
+            <div>
+              <Popover.Button
+                ref={
+                  setReferenceElement as unknown as (
+                    instance: HTMLButtonElement | null
+                  ) => void
+                }
+                as="div"
+              >
+                <div
+                  className={`flex justify-between items-center bg-white rounded cursor-pointer focus:outline-none border px-2 py-3 h-10 ${customWidth} ${
+                    open ? "border-gray-4" : "border-gray-3"
+                  }
+                `}
+                >
+                  <div className={`font-sans text-base text-gray-7 flex`}>
+                    <div>{`${label}:`}</div>
+                    <div className="font-semibold">
+                      {
+                        selectedOption?.[
+                          selectedOptionLabelKey as keyof typeof selectedOption
+                        ]
+                      }
+                    </div>
+                  </div>
+                  {open ? (
+                    <Arrow className="rotate-90 delay-100 transition" />
+                  ) : (
+                    <Arrow className="transition delay-100 " />
+                  )}
+                </div>
+              </Popover.Button>
+            </div>
+            <Popover.Panel
+              className="w-[190px] max-h-[370px] flex flex-col py-2 bg-white rounded-md shadow-1 z-10"
               ref={
-                setReferenceElement as unknown as (
-                  instance: HTMLButtonElement | null
+                setPopperElement as unknown as (
+                  instance: HTMLDivElement | null
                 ) => void
               }
-              as="div"
+              style={styles.popper}
+              {...attributes.popper}
             >
-              <div
-                className={`flex justify-between items-center bg-white rounded cursor-pointer focus:outline-none border px-2 py-3 h-10 ${customWidth} ${
-                  open ? "border-gray-4" : "border-gray-3"
-                }
-                `}
-              >
-                <p
-                  className={`truncate ${isUppercaseLabel ? "uppercase" : ""} `}
-                >
-                  {
-                    selectedOption?.[
-                      selectedOptionLabelKey as keyof typeof selectedOption
-                    ]
-                  }
-                </p>
-                {/* {open ? (
-                  <AngleUp
-                    className={`flex-none text-black ${
-                      isThemeSensitive ? "dark:text-white" : ""
-                    }`}
-                  />
-                ) : (
-                  <AngleDown
-                    className={`flex-none text-black ${
-                      isThemeSensitive ? "dark:text-white" : ""
-                    }`}
-                  />
-                )} */}
+              {label && (
+                <div className="px-3 py-2 text-sm text-gray-6">{`Choose ${label.toLowerCase()}`}</div>
+              )}
+              <div className="overflow-y-auto">
+                {options.map((option) => (
+                  <div
+                    key={option?.[optionIdKey as keyof typeof option]}
+                    onClick={() => onOptionClick(option)}
+                  >
+                    <Popover.Button as="div" className="item">
+                      <div className="w-full px-3 py-4 group cursor-pointer hover:bg-purple-1 font-sans text-base text-gray-7">
+                        <p>{option?.[optionLabelKey as keyof typeof option]}</p>
+                      </div>
+                    </Popover.Button>
+                  </div>
+                ))}
               </div>
-            </Popover.Button>
-          </div>
-          <Popover.Panel
-            className="w-[200px] max-h-[370px] flex flex-col py-2 bg-white rounded-md shadow-1 z-10"
-            ref={setReferenceElement as unknown as (
-                instance: HTMLDivElement | null
-              ) => void}
-            style={styles.popper}
-            {...attributes.popper}
-          >
-            {label && (
-              <div className="px-3 py-2 text-sm text-gray-6">{`Choose ${label.toLowerCase()}`}</div>
-            )}
-            <div className="overflow-y-auto">
-              {options.map((option) => (
-                <div
-                  key={option?.[optionIdKey as keyof typeof option]}
-                  onClick={() => onOptionClick(option)}
-                >
-                  <Popover.Button as="div" className="item">
-                    <div className="w-full px-3 py-4 group cursor-pointer hover:bg-purple-1">
-                      <p>{option?.[optionLabelKey as keyof typeof option]}</p>
-                    </div>
-                  </Popover.Button>
-                </div>
-              ))}
-            </div>
-          </Popover.Panel>
-        </>
-      )}
-    </Popover>
+            </Popover.Panel>
+          </>
+        )}
+      </Popover>
+    </div>
   );
 }
