@@ -69,7 +69,7 @@ module.exports = {
       sm: ['12px', '16px'],
       base: ['14px', '21px'],
       md: ['15px', '21px'],
-      lg: ['18px', '25px'],
+      lg: ['18px', '20px'],
       xl: ['24px', '33px'],
       '2xl': ['36px', '49px'],
     },

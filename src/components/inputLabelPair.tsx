@@ -10,7 +10,7 @@ const InputLabelPair = ({
   placeholder
 }: {
   label: string;
-  value: string;
+  value?: string;
   onChange?(e: ChangeEvent<HTMLInputElement>): void;
   maxLength: number;
   placeholder?: string;
