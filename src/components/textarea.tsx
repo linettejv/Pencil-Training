@@ -57,7 +57,7 @@ const TextAreaComponent: FC<TextAreaProps> = ({
   const maxLengthStyle = maxLengthStyleMap[appearance];
 
   return (
-    <div className="w-full h-full flex flex-col items-end relative  pl-[15px]">
+    <div className="w-full h-full flex flex-col items-end relative">
       <textarea
         ref={register}
         {...(value !== undefined && { value })}

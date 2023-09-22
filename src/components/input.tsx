@@ -92,7 +92,7 @@ const InputControlledComponent = ({
   const sizeClasses = getSizeClassNames(size);
 
   return (
-    <div className="pl-[15px] w-full">
+    <div className=" w-full">
       <span className="relative">
         <input
           value={value}
