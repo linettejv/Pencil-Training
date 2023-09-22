@@ -74,14 +74,6 @@ const TextAreaComponent: FC<TextAreaProps> = ({
         <p
           className={`absolute ${
             isDisabled ? "bg-gray-3 text-gray-5" : "text-gray-6"
-          } ${
-            isThemeSensitive
-              ? `${
-                  isDisabled
-                    ? "dark:bg-gray-7 dark:text-gray-6"
-                    : "dark:bg-dark-1 dark:text-gray-5"
-                }`
-              : ""
           } ${maxLengthStyle}`}
         >
           {value?.length}/{maxLength}
