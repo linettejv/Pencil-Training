@@ -43,7 +43,7 @@ export const NavigationButton: FC<NavigationButtonProps> = (
       >
         {IconComponent && <IconComponent className={iconClasses} />}
         <div className="flex space-x-1">
-          {label && <span className="leading-[20px] pt-[2px] ">{label}</span>}
+          {label && <span className="leading-[20px] pt-[2px] text-base font-semibold">{label}</span>}
         </div>
       </span>
     </Button>
