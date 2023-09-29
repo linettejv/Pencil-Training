@@ -9,4 +9,11 @@ export { ReactComponent as Arrow } from "public/assets/icons/arrow.svg";
 export { ReactComponent as Number1 } from "public/assets/icons/Numeration1.svg";
 export { ReactComponent as Number2 } from "public/assets/icons/Numeration2.svg";
 export { ReactComponent as Number3 } from "public/assets/icons/Numeration3.svg";
+export { ReactComponent as QuestionInverse } from "public/assets/icons/question-mark.svg";
+export { ReactComponent as Target } from "public/assets/icons/target.svg";
+// export { ReactComponent as Target } from "public/assets/icons/target.svg";
+// export { ReactComponent as Target } from "public/assets/icons/target.svg";
+// export { ReactComponent as Target } from "public/assets/icons/target.svg";
+// export { ReactComponent as Target } from "public/assets/icons/target.svg";
+// export { ReactComponent as Target } from "public/assets/icons/target.svg";
 

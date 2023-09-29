@@ -37,9 +37,6 @@ export function Select<Option>({
     placement: popperPlacement,
   });
 
-  // eslint-disable-next-line no-console
-  console.log(styles);
-
   return (
     <div className="pl-[10px]">
       <Popover>

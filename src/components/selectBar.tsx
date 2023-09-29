@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Select } from "./select";
-import { QuestionInverse, Target } from "@/components-ui/icons";
-import { Tooltip } from "@/components-ui/tooltip/tooltip";
+import { Target } from "@/components-ui/icons";
 
 const OBJECTIVES = [
   { id: "Conversion", label: "CONVERSION" },
@@ -30,7 +29,7 @@ export const SelectBar = () => {
 
   return (
     <div className="flex flex-col">
-      <div className="w-full h-[60px] flex items-center">
+      <div className="w-full h-[70px] flex items-center">
         <div className="flex pl-[20px]">
           <Target />
           <div className="pr-[5px]">Show predictions for:</div>
@@ -78,7 +77,7 @@ export const SelectBar = () => {
         />
       </div>
 
-      <div className="w-full h-[1px] bg-gray-4 mb-5"></div>
+      <div className="w-full h-[1px] bg-gray-3 mb-5"></div>
     </div>
   );
 };

@@ -13,7 +13,7 @@ function CopyScript() {
   const [input8, setInput8] = useState("");
 
   return (
-    <div className="px-7 py-6 w-[566px] h-fit flex-shrink-0 rounded-lg border border-solid border-gray-3 bg-white">
+    <div className="px-7 py-6 w-1/2 h-fit flex flex-col rounded-lg border border-solid border-gray-3 bg-white">
       <div className="text-gray-7 font-sans text-lg font-semibold leading-normal">
         Copy script for image or video ads
       </div>

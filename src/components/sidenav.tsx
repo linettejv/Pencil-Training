@@ -11,8 +11,8 @@ import Link from "next/link";
 /* eslint-disable @next/next/no-img-element */
 const Sidenav = () => {
   return (
-    <div className="w-[180px] min-w-[180px] h-[800px] flex flex-col justify-between bg-white transition-colors  pt-10 pb-3 border-r border-gray-3  z-20">
-      <div className="px-2 h-full overflow-y-auto">
+    <div className="w-[180px] min-w-[180px] h-full flex flex-col justify-between bg-white transition-colors  pt-10 pb-3 border-r border-gray-3  z-20">
+      <div className="px-2 overflow-y-auto flex">
         <div className="mb-3">
           <img className="px-7" src="assets/pencil-logo.png" alt="logo" />
           <div className="border-t border-gray-3 h-[1px] w-full my-3" />
@@ -60,7 +60,7 @@ const Sidenav = () => {
           />
         </div>
       </div>
-      <div className="px-2 h-full overflow-y-auto">
+      <div className="px-2 overflow-y-auto">
         <NavigationButton
           IconComponent={Ideas}
           // onClick={show}
