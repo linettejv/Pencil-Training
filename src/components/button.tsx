@@ -15,6 +15,7 @@ export const Button: FC<ButtonProps> = ({
   isDisabled = false,
   type = "button",
   onClick = () => {},
+  classOverride = '',
   
 }) => {
   const handleClick = (e:any)=>{
@@ -22,7 +23,7 @@ export const Button: FC<ButtonProps> = ({
   }
   return (
     <button
-      className={`flex-none rounded focus:outline-none  `}
+      className={`flex-none rounded focus:outline-none ${classOverride} `}
       disabled={isDisabled}
       type={type}
       onClick={(e) => handleClick(e)}
