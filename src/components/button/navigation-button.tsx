@@ -41,9 +41,17 @@ export const NavigationButton: FC<NavigationButtonProps> = (
       <span
         className={`w-full h-full flex items-center whitespace-nowrap space-x-2 justify-start ${textClassOverride}`}
       >
-        {IconComponent && <div className="h-6 w-6 flex items-center justify-center"><IconComponent className={iconClasses} /></div>}
+        {IconComponent && (
+          <div className="h-6 w-6 flex items-center justify-center">
+            <IconComponent className={iconClasses} />
+          </div>
+        )}
         <div className="flex space-x-1">
-          {label && <span className="leading-[20px] pt-[2px] text-base font-semibold">{label}</span>}
+          {label && (
+            <span className="leading-[20px] pt-[2px] text-base font-semibold">
+              {label}
+            </span>
+          )}
         </div>
       </span>
     </Button>

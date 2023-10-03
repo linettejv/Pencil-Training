@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Select } from "./select";
 import { Target } from "@/components-ui/icons";
+import { SecondaryButton } from "./button/secondary-button";
+import { PrimaryButton } from "./button/primary-button";
 
 const OBJECTIVES = [
   { id: "Conversion", label: "CONVERSION" },
@@ -28,53 +30,57 @@ export const SelectBar = () => {
   const [metric, setMetric] = useState(METRICS[0]);
 
   return (
-    <div className="flex flex-col">
-      <div className="w-full h-[70px] flex items-center">
-        <div className="flex pl-[20px]">
-          <Target />
-          <div className="pr-[5px]">Show predictions for:</div>
+    <div className="flex flex-col pr-[34px]">
+      <div className="w-full h-[70px] flex items-center justify-between">
+        <div className="flex flex-row items-center">
+          <div className="flex pl-[20px]">
+            <Target />
+            <div className="pr-[5px]">Show predictions for:</div>
+          </div>
+          <Select
+            label="Objectives"
+            options={OBJECTIVES}
+            selectedOption={objective}
+            optionLabelKey="id"
+            selectedOptionLabelKey="id"
+            onOptionClick={(option) => {
+              setObjective(option);
+            }}
+            customWidth="w-[190px]"
+            isUppercaseLabel={false}
+            isThemeSensitive={true}
+            popperPlacement="bottom-start"
+          />
+          <Select
+            label="Targeting"
+            options={TARGETINGS}
+            selectedOption={targeting}
+            selectedOptionLabelKey="id"
+            optionLabelKey="id"
+            onOptionClick={(option) => {
+              setTargeting(option);
+            }}
+            customWidth="w-[188px]"
+            isUppercaseLabel={false}
+            isThemeSensitive={true}
+            popperPlacement="bottom-start"
+          />
+          <Select
+            label="Metric"
+            options={METRICS}
+            selectedOption={metric}
+            selectedOptionLabelKey="label"
+            onOptionClick={(option) => {
+              setMetric(option);
+            }}
+            customWidth="w-[139px]"
+            isUppercaseLabel={false}
+            isThemeSensitive={true}
+            popperPlacement="bottom-start"
+          />
         </div>
-        <Select
-          label="Objectives"
-          options={OBJECTIVES}
-          selectedOption={objective}
-          optionLabelKey="id"
-          selectedOptionLabelKey="id"
-          onOptionClick={(option) => {
-            setObjective(option);
-          }}
-          customWidth="w-[190px]"
-          isUppercaseLabel={false}
-          isThemeSensitive={true}
-          popperPlacement="bottom-start"
-        />
-        <Select
-          label="Targeting"
-          options={TARGETINGS}
-          selectedOption={targeting}
-          selectedOptionLabelKey="id"
-          optionLabelKey="id"
-          onOptionClick={(option) => {
-            setTargeting(option);
-          }}
-          customWidth="w-[188px]"
-          isUppercaseLabel={false}
-          isThemeSensitive={true}
-          popperPlacement="bottom-start"
-        />
-        <Select
-          label="Metric"
-          options={METRICS}
-          selectedOption={metric}
-          selectedOptionLabelKey="label"
-          onOptionClick={(option) => {
-            setMetric(option);
-          }}
-          customWidth="w-[139px]"
-          isUppercaseLabel={false}
-          isThemeSensitive={true}
-          popperPlacement="bottom-start"
-        />
+
+        <PrimaryButton label={"Generate copy"} />
       </div>
 
       <div className="w-full h-[1px] bg-gray-3 mb-5"></div>

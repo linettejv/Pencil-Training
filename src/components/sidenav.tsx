@@ -1,4 +1,4 @@
-import { ArrowDown, Heart} from "@/components-ui/icons";
+import { ArrowDown, Heart } from "@/components-ui/icons";
 import { Ideas } from "@/components-ui/icons";
 import { Projects } from "@/components-ui/icons";
 import { Benchmark } from "@/components-ui/icons";
@@ -7,7 +7,7 @@ import { AssetLib } from "@/components-ui/icons";
 import { Speedometer } from "@/components-ui/icons";
 import { BenchMarks } from "@/components-ui/icons";
 
-import { NavigationButton } from "./navigation-button";
+import { NavigationButton } from "./button/navigation-button";
 import Link from "next/link";
 
 /* eslint-disable @next/next/no-img-element */
@@ -21,7 +21,7 @@ const Sidenav = () => {
 
         <div className="leading-[20px] pt-[2px] ml-[13px] mr-[14px] my-2 text-gray-7 text-base font-semibold flex justify-between flex-row">
           Hydrant
-          <ArrowDown/>
+          <ArrowDown />
         </div>
 
         <Link href="/projects">
