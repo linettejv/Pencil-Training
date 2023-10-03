@@ -11,9 +11,10 @@ export { ReactComponent as Number2 } from "public/assets/icons/Numeration2.svg";
 export { ReactComponent as Number3 } from "public/assets/icons/Numeration3.svg";
 export { ReactComponent as QuestionInverse } from "public/assets/icons/question-mark.svg";
 export { ReactComponent as Target } from "public/assets/icons/target.svg";
-// export { ReactComponent as Target } from "public/assets/icons/target.svg";
-// export { ReactComponent as Target } from "public/assets/icons/target.svg";
-// export { ReactComponent as Target } from "public/assets/icons/target.svg";
-// export { ReactComponent as Target } from "public/assets/icons/target.svg";
-// export { ReactComponent as Target } from "public/assets/icons/target.svg";
+export { ReactComponent as Checkbox } from "public/assets/icons/checkbox.svg";
+export { ReactComponent as Amazon } from "public/assets/icons/amazon.svg";
+export { ReactComponent as Youtube } from "public/assets/icons/youtube.svg";
+export { ReactComponent as Instagram } from "public/assets/icons/instagram.svg";
+export { ReactComponent as Facebook } from "public/assets/icons/facebook.svg";
+export { ReactComponent as Tiktok } from "public/assets/icons/tiktok.svg";
 

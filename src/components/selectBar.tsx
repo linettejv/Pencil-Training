@@ -29,10 +29,10 @@ export const SelectBar = () => {
 
   return (
     <div className="flex flex-col">
-      <div className="w-full h-[70px] flex items-center">
+      <div className="w-full h-[70px] flex items-center pl-6">
         <div className="flex pl-[20px]">
           <Target />
-          <div className="pr-[5px]">Show predictions for:</div>
+          <div className="pl-2 pr-4">Show predictions for:</div>
         </div>
         <Select
           label="Objectives"

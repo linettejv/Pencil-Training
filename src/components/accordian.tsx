@@ -5,11 +5,12 @@ import { Arrow, QuestionInverse } from "@/components-ui/icons";
 import { Tooltip } from "@/components-ui/tooltip/tooltip";
 
 type AccordianTypes = {
-  showOptions: boolean;
-  heading: string;
-  NumberIcon: any;
+  showOptions?: boolean;
+  heading?: string;
+  NumberIcon?: any;
   description?: string;
   inputPlaceholder?: string;
+  children?: any;
 };
 
 const Accordian = ({
@@ -18,6 +19,7 @@ const Accordian = ({
   NumberIcon = () => null,
   description = "",
   inputPlaceholder = "",
+  children,
 }: AccordianTypes) => {
   const [input, setInput] = useState("");
 
@@ -46,16 +48,19 @@ const Accordian = ({
                 <div className="flex flex-row items-center">
                   <NumberIcon />
                   <span className="pl-4 pr-2">{heading}</span>
-                  <Tooltip
-                    PopComponent={
-                      <div className="bg-gray-7 text-white text-sm py-2 px-3 rounded-md whitespace-pre-wrap w-[164px]">
-                        {description}
-                      </div>
-                    }
-                    RefComponent={
-                      <QuestionInverse className="h-6 w-6 text-gray-5 dark:text-gray-7" />
-                    }
-                  />
+                  {children}
+                  {heading && (
+                    <Tooltip
+                      PopComponent={
+                        <div className="bg-gray-7 text-white text-sm py-2 px-3 rounded-md whitespace-pre-wrap w-[164px]">
+                          {description}
+                        </div>
+                      }
+                      RefComponent={
+                        <QuestionInverse className="h-6 w-6 text-gray-5 dark:text-gray-7" />
+                      }
+                    />
+                  )}
                 </div>
 
                 <div className="">
