@@ -42,7 +42,7 @@ const Accordian = ({
         <Disclosure>
           {({ open }) => (
             <>
-              <Disclosure.Button className="flex w-full justify-between rounded-md  text-lg  px-4 py-2 text-left  hover:bg-purple-2  focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75 border-black border-spacing-1">
+              <Disclosure.Button className="flex w-full justify-between rounded-md  text-lg  px-4 py-2 text-left   focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75 border-black border-spacing-1">
                 <div className="flex flex-row items-center">
                   <NumberIcon />
                   <span className="pl-4 pr-2">{heading}</span>
