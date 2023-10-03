@@ -62,7 +62,7 @@ const TextAreaComponent: FC<TextAreaProps> = ({
         ref={register}
         {...(value !== undefined && { value })}
         className={`w-full h-full placeholder-gray-5 rounded  
-             disabled:bg-gray-3 border border-gray-4 focus:border-gray-5 py-3 px-4`}
+             disabled:bg-gray-3 border border-gray-4 focus:outline-none focus:border-gray-5 py-3 px-4`}
         name={name}
         placeholder={placeholder}
         rows={rows}

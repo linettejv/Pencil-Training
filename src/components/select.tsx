@@ -38,7 +38,7 @@ export function Select<Option>({
   });
 
   return (
-    <div className="pl-[10px]">
+    <div className="pr-[10px]">
       <Popover>
         {({ open }) => (
           <>
@@ -59,7 +59,7 @@ export function Select<Option>({
                 >
                   <div className={`font-sans text-base text-gray-7 flex`}>
                     <div>{`${label}:`}</div>
-                    <div className="font-semibold">
+                    <div className="font-semibold pl-1">
                       {
                         selectedOption?.[
                           selectedOptionLabelKey as keyof typeof selectedOption

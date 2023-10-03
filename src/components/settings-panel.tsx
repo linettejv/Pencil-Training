@@ -4,10 +4,11 @@ import { Number1, Number2, Number3 } from "@/components-ui/icons";
 import Accordian from "@/components/accordian";
 
 // `app/dashboard/page.tsx` is the UI for the `/dashboard` URL
-export default function Page() {
+export default function SettingsPanel() {
   return (
     <>
       <div className="flex flex-col h-fit gap-5">
+        <Accordian><div className="flex h-full w-full py-3 bg-gray-5">hello</div></Accordian>
         <Accordian
           showOptions={false}
           heading={"Brand Description"}

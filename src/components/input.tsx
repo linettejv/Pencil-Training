@@ -17,7 +17,7 @@ enum InputSize {
 const getAppearanceClassNames = (appearance: InputAppearance) => {
   switch (appearance) {
     case InputAppearance.PRIMARY:
-      return "border border-gray-4 focus:border-gray-5 py-3 px-4";
+      return "border border-gray-4 focus:outline-none focus:border-gray-5 py-3 px-4";
     case InputAppearance.PRIMARY_V2:
       return "border border-gray-3 focus:border-gray-4 py-3 px-4";
     case InputAppearance.SECONDARY:
@@ -97,7 +97,7 @@ const InputControlledComponent = ({
         <input
           value={value}
           ref={register}
-          className={`form-input w-full text-base text-gray-7 placeholder-gray-5 rounded focus:ring-transparent ${sizeClasses} ${inputSpacing} ${inputClasses} disabled:bg-gray-3`}
+          className={`form-input w-full text-base text-gray-7 placeholder-gray-5 rounded ${sizeClasses} ${inputSpacing} ${inputClasses} disabled:bg-gray-3`}
           disabled={isDisabled}
           name={name}
           placeholder={placeholder}

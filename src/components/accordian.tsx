@@ -11,11 +11,12 @@ import {
 import { Tooltip } from "@/components-ui/tooltip/tooltip";
 
 type AccordianTypes = {
-  showOptions: boolean;
-  heading: string;
-  NumberIcon: any;
+  showOptions?: boolean;
+  heading?: string;
+  NumberIcon?: any;
   description?: string;
   inputPlaceholder?: string;
+  children?: any;
 };
 
 const Accordian = ({
@@ -24,6 +25,7 @@ const Accordian = ({
   NumberIcon = () => null,
   description = "",
   inputPlaceholder = "",
+  children,
 }: AccordianTypes) => {
   const [input, setInput] = useState("");
   const [prediction, setPrediction] = useState("");
@@ -56,6 +58,9 @@ const Accordian = ({
                 <div className="flex flex-row items-center">
                   <NumberIcon />
 
+                  
+
+
                   <span className="pl-4 pr-2">{heading} </span>
 
                   <Tooltip
@@ -68,6 +73,7 @@ const Accordian = ({
                       <QuestionInverse className="h-6 w-6 text-gray-5 dark:text-gray-7" />
                     }
                   />
+
                 </div>
 
                 <div className="flex flex-row items-center">

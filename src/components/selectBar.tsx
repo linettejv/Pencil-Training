@@ -30,6 +30,7 @@ export const SelectBar = () => {
   const [metric, setMetric] = useState(METRICS[0]);
 
   return (
+
     <div className="flex flex-col pr-[34px]">
       <div className="w-full h-[70px] flex items-center justify-between">
         <div className="flex flex-row items-center">
