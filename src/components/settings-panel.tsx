@@ -8,8 +8,17 @@ export default function SettingsPanel() {
   return (
     <>
       <div className="flex flex-col h-fit gap-5">
-        <Accordian><div className="flex h-full w-full py-3 bg-gray-5">hello</div></Accordian>
+        <Accordian tooltip={false}>
+          <div className="flex flex-row h-[46.42px] w-[100%]">
+            <img src="assets/chicken-bowl.png" alt="bowl img" />
+            <div className="pl-3">
+              <div className="text-base font-bold ">Chicken Bowl</div>
+              <div className="text-base text-gray-6">Meals</div>
+            </div>
+          </div>
+        </Accordian>
         <Accordian
+          tooltip={true}
           showOptions={false}
           heading={"Brand Description"}
           NumberIcon={Number1}
@@ -17,6 +26,7 @@ export default function SettingsPanel() {
           inputPlaceholder="Brand Description"
         />
         <Accordian
+          tooltip={true}
           showOptions={false}
           heading={"Product Description"}
           NumberIcon={Number2}
@@ -24,6 +34,7 @@ export default function SettingsPanel() {
           inputPlaceholder="Product Description"
         />
         <Accordian
+          tooltip={true}
           showOptions={true}
           heading={"Topic"}
           NumberIcon={Number3}
