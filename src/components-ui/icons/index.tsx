@@ -24,6 +24,8 @@ export { ReactComponent as Tiktok } from "public/assets/icons/tiktok.svg";
 
 
 export { ReactComponent as Speedometer } from "public/assets/icons/Speedometer.svg";
+export { ReactComponent as Cross } from "public/assets/icons/cross.svg";
+
 export { ReactComponent as BenchMarks } from "public/assets/icons/benchmarks.svg";
 export { ReactComponent as ArrowDown } from "public/assets/icons/downArrow.svg";
 export { ReactComponent as Winner } from "public/assets/icons/winner.svg";
