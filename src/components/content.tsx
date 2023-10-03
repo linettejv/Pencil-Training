@@ -1,3 +1,4 @@
+import { SecondaryButton } from "./button/secondary-button";
 import CopyScript from "./copyScript";
 import { SelectBar } from "./selectBar";
 import { Settings } from "./settings";

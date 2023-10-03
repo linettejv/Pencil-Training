@@ -20,6 +20,7 @@ export default function Home() {
       <div className="flex flex-col bg-gray-2 h-fit w-full m-5">
         <Header title="Copy" />
         <Content />
+        
       </div>
     </div>
   );
