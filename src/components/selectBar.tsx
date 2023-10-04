@@ -30,13 +30,12 @@ export const SelectBar = () => {
   const [metric, setMetric] = useState(METRICS[0]);
 
   return (
-
     <div className="flex flex-col pr-[34px]">
       <div className="w-full h-[70px] flex items-center justify-between">
         <div className="flex flex-row items-center">
           <div className="flex pl-[20px]">
             <Target />
-            <div className="pr-[5px]">Show predictions for:</div>
+            <div className="pr-4 pl-2 ">Show predictions for:</div>
           </div>
           <Select
             label="Objectives"

@@ -1,4 +1,4 @@
-import { Arrow } from "@/components-ui/icons";
+import { Arrow, ArrowDown1 } from "@/components-ui/icons";
 import { Popover } from "@headlessui/react";
 import React, { LegacyRef, useState } from "react";
 import { usePopper } from "react-popper";
@@ -68,9 +68,9 @@ export function Select<Option>({
                     </div>
                   </div>
                   {open ? (
-                    <Arrow className="rotate-90 delay-100 transition" />
+                    <ArrowDown1 className="rotate-180 delay-100 transition" />
                   ) : (
-                    <Arrow className="transition delay-100 " />
+                    <ArrowDown1 className="transition delay-100 " />
                   )}
                 </div>
               </Popover.Button>
