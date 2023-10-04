@@ -17,6 +17,7 @@ type AccordianTypes = {
   description?: string;
   inputPlaceholder?: string;
   children?: any;
+  tooltip?: boolean;
 };
 
 const Accordian = ({
@@ -26,6 +27,7 @@ const Accordian = ({
   description = "",
   inputPlaceholder = "",
   children,
+  tooltip = false,
 }: AccordianTypes) => {
   const [input, setInput] = useState("");
   const [prediction, setPrediction] = useState("");
@@ -58,24 +60,22 @@ const Accordian = ({
                 <div className="flex flex-row items-center">
                   <NumberIcon />
 
-                  
+                  <span className="pl-4 pr-2 font-semibold">{heading} </span>
 
-
-                  <span className="pl-4 pr-2">{heading} </span>
-
-                  <Tooltip
-                    PopComponent={
-                      <div className="bg-gray-7 text-white text-sm py-2 px-3 rounded-lg whitespace-pre-wrap w-[164px]">
-                        {description}
-                      </div>
-                    }
-                    RefComponent={
-                      <QuestionInverse className="h-6 w-6 text-gray-5 dark:text-gray-7" />
-                    }
-                  />
-
+                  {tooltip && (
+                    <Tooltip
+                      PopComponent={
+                        <div className="bg-gray-7 text-white text-sm py-2 px-3 rounded-lg whitespace-pre-wrap w-[164px] ">
+                          {description}
+                        </div>
+                      }
+                      RefComponent={
+                        <QuestionInverse className="h-6 w-6 text-gray-5 dark:text-gray-7" />
+                      }
+                    />
+                  )}
                 </div>
-
+                {children}
                 <div className="flex flex-row items-center">
                   {prediction && (
                     <div className="flex flex-row text-sm items-center mr-2 transition-opacity duration-500 ease-in ">

@@ -8,6 +8,7 @@ export { ReactComponent as Arrow } from "public/assets/icons/arrow.svg";
 export { ReactComponent as ArrowToRight } from "public/assets/icons/arrowToRight.svg";
 export { ReactComponent as Looser } from "public/assets/icons/looser.svg";
 export { ReactComponent as Uncertain } from "public/assets/icons/uncertain.svg";
+export { ReactComponent as ArrowDown1 } from "public/assets/icons/arrowDown.svg";
 
 export { ReactComponent as Number1 } from "public/assets/icons/Numeration1.svg";
 export { ReactComponent as Number2 } from "public/assets/icons/Numeration2.svg";
@@ -22,11 +23,9 @@ export { ReactComponent as Instagram } from "public/assets/icons/instagram.svg";
 export { ReactComponent as Facebook } from "public/assets/icons/facebook.svg";
 export { ReactComponent as Tiktok } from "public/assets/icons/tiktok.svg";
 
-
 export { ReactComponent as Speedometer } from "public/assets/icons/Speedometer.svg";
 export { ReactComponent as Cross } from "public/assets/icons/cross.svg";
 
 export { ReactComponent as BenchMarks } from "public/assets/icons/benchmarks.svg";
 export { ReactComponent as ArrowDown } from "public/assets/icons/downArrow.svg";
 export { ReactComponent as Winner } from "public/assets/icons/winner.svg";
-
