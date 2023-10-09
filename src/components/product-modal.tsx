@@ -1,14 +1,10 @@
-import { useDerivedState } from '@lib/client/use-derived-state';
-import { Product } from '@modules/asset-library/types';
-import { useProductPanel } from '@modules/assets/hooks/use-product-panel';
-import { PrimaryButton } from 'components-ui/button/primary-button';
-import { Input } from 'components-ui/input/input';
-import { Modal } from 'components-ui/modal/modal';
-import { Spinner } from 'components-ui/spinner/spinner';
-import { ButtonSize } from 'core/enums';
 import { debounce } from 'lodash';
-import { useRef } from 'react';
-import { Waypoint } from 'react-waypoint';
+import { useRef, useState } from 'react';
+import { Modal } from './modal';
+import { PrimaryButton } from './button/primary-button';
+import { Spinner } from '@/components-ui/spinner/spinner';
+import InputControlledComponent from './input';
+import { ButtonSize } from '@/components-ui/enums/ui';
 import { ProductOptions } from './product-options';
 
 export const ProductModal = ({
@@ -20,19 +16,20 @@ export const ProductModal = ({
 }: {
   isOpen: boolean;
   closeModal: () => void;
-  selectedProduct: Product | null;
-  onProductSelect: (product: Product | null) => void;
+  selectedProduct: any;
+  onProductSelect: (product: any | null) => void;
   isSaveAssetModal?: boolean;
 }) => {
-  const [chosenProduct, setChosenProduct] = useDerivedState(selectedProduct);
+  const [chosenProduct, setChosenProduct] = useState(selectedProduct);
+
+  const [productSearchKeyword, setProductSearchKeyword] = useState('');
 
   const {
-    isProductLoading,
+
     noProductResult,
     products,
     setProductSearchKeyword,
-    hasNextProductPage,
-    fetchNextProductPage,
+   
   } = useProductPanel({
     isProductPanelOpen: isOpen,
     isAssetsPanelOpen: false,
@@ -71,17 +68,15 @@ export const ProductModal = ({
         </div>
         <div className="w-[292px] m-auto pt-2 space-y-4">
           <div className="space-y-5">
-            <Input
+            <InputControlledComponent
               withSearchIcon={true}
               placeholder="Search"
-              onChange={(e) => handleAssetSearch(e.target.value)}
+              onChange={(e: { target: { value: any } }) =>
+                handleAssetSearch(e.target.value)
+              }
             />
             <div className="h-[282px] bg-white border border-gray-3 rounded-lg p-6 space-y-3 overflow-y-scroll">
-              {isProductLoading ? (
-                <div className="h-full w-full flex flex-col items-center justify-center">
-                  <Spinner />
-                </div>
-              ) : noProductResult ? (
+              {noProductResult ? (
                 'No Product found.'
               ) : (
                 <>
@@ -90,19 +85,6 @@ export const ProductModal = ({
                     onProductChosen={setChosenProduct}
                     chosenProduct={chosenProduct}
                   />
-                  {hasNextProductPage && (
-                    <Waypoint
-                      onEnter={() => {
-                        if (hasNextProductPage) {
-                          fetchNextProductPage();
-                        }
-                      }}
-                    >
-                      <div className="w-full flex flex-col justify-center items-center">
-                        <Spinner />
-                      </div>
-                    </Waypoint>
-                  )}
                 </>
               )}
             </div>

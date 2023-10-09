@@ -1,3 +1,4 @@
+import { Search } from "@/components-ui/icons";
 import React, { ChangeEvent, KeyboardEvent } from "react";
 
 export const InputMaxLength = 524288;
@@ -94,6 +95,9 @@ const InputControlledComponent = ({
   return (
     <div className=" w-full">
       <span className="relative">
+      {withSearchIcon && (
+        <Search className="absolute text-gray-6 top-[-2px] left-[8px]" />
+      )}
         <input
           value={value}
           ref={register}
