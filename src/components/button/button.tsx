@@ -53,6 +53,7 @@ export const Button: FC<ButtonProps> = ({
 }) => {
   const handleClick = (e: any) => {
     console.log("buttonclicked");
+    onClick();
   };
   return (
     <button
