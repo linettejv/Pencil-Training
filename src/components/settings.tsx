@@ -2,6 +2,7 @@ import { useState } from "react";
 import { About } from "./about";
 import { Select } from "./select";
 import SettingsPanel from "./settings-panel";
+import { Modal } from "./modal";
 
 const NARRATIVE_TYPE = [
   { id: "Problem-solution", label: "PROBLEM-SOLUTION" },
@@ -25,11 +26,16 @@ export const Settings = () => {
           onOptionClick={(option) => {
             setNarrativeType(option);
           }}
-          customWidth="w-[250px]"
+          customWidth="w-[260px]"
           isUppercaseLabel={false}
           isThemeSensitive={true}
           popperPlacement="bottom-start"
         />
+        <Modal isOpen={true}>
+          hellohabsdfjvhbjah
+          dlkjvblkjdfblk
+          sdkjfvblkj
+        </Modal>
       </div>
     </>
   );
