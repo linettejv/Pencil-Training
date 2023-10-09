@@ -23,7 +23,7 @@ export const About = () => {
           <div className="flex items-center justify-center h-[30px] w-[30px]"><Amazon /></div>
           <div className="flex items-center justify-center h-[30px] w-[30px]"><Instagram /></div>
           <div className="flex items-center justify-center h-[30px] w-[30px]"><Tiktok /></div>
-          <div className="flex items-center justify-center h-[30px] px-5">Generate ad script</div>
+          <div className="flex items-center justify-center h-[30px] px-5 text-lg font-semibold">Generate ad script</div>
           <Tooltip
                     PopComponent={
                       <div className="bg-gray-7 text-white text-sm py-2 px-3 rounded-md whitespace-pre-wrap w-[164px]">
@@ -35,7 +35,7 @@ export const About = () => {
                     }
                   />
         </div>
-        <div className="flex text-base text-gray-6 pl-9">
+        <div className="flex text-md  text-gray-6 pl-9">
         Generate copy scripts for image or video ads using your brand description, product description, a topic and a style.
         </div>
       </div>

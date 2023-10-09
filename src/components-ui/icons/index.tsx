@@ -26,3 +26,7 @@ export { ReactComponent as BenchMarks } from "public/assets/icons/benchmarks.svg
 export { ReactComponent as ArrowDown } from "public/assets/icons/downArrow.svg";
 export { ReactComponent as Winner } from "public/assets/icons/winner.svg";
 export { ReactComponent as Search } from 'public/assets/icons/search.svg';
+export { ReactComponent as RadioOff } from 'public/assets/icons/radio-off.svg';
+export { ReactComponent as RadioOn } from 'public/assets/icons/radio-on.svg';
+export { ReactComponent as CheckboxOff } from 'public/assets/icons/checkbox-off.svg';
+export { ReactComponent as CheckboxOn } from 'public/assets/icons/checkbox-on.svg';
