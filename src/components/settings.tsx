@@ -31,11 +31,7 @@ export const Settings = () => {
           isThemeSensitive={true}
           popperPlacement="bottom-start"
         />
-        <Modal isOpen={true}>
-          hellohabsdfjvhbjah
-          dlkjvblkjdfblk
-          sdkjfvblkj
-        </Modal>
+        
       </div>
     </>
   );
