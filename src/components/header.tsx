@@ -5,9 +5,11 @@ import { Winner } from "@/components-ui/icons";
 export const Header = ({
   title,
   children,
+  showButton = false,
 }: {
   title: string;
   children?: any;
+  showButton ?: boolean
 }) => {
   return (
     <>
@@ -15,10 +17,10 @@ export const Header = ({
         <div className="font-nunito text-xl font-semibold">{title}</div>
 
 
-        <SecondaryButton
+       { showButton &&  <SecondaryButton
           label={"Use copy to generate Ideas"}
           size={ButtonSize.BASE_MD}
-        />  
+        /> } 
 
       </div>
     </>

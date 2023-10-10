@@ -51,6 +51,14 @@ export const products = [
       displayName: 'PRO',
       category: 'Electronics',
     },
+    {
+      id: 7,
+      description: 'Chicken Bowl',
+      thumbnail:
+        'assets/images/chicken-bowl.png',
+      displayName: 'Chicken Bowl',
+      category: 'Meals',
+    },
     
   ];
   

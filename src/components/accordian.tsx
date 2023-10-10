@@ -9,6 +9,7 @@ import {
   Winner,
 } from "@/components-ui/icons";
 import { Tooltip } from "@/components-ui/tooltip/tooltip";
+import { values } from "./constants/prediction_values";
 
 type AccordianTypes = {
   showOptions?: boolean;
@@ -37,18 +38,7 @@ const Accordian = ({
     setPrediction(prediction);
   };
 
-  const values = [
-    { id: 1, label: "Routine", prediction: "winner" },
-    { id: 2, label: "Health", prediction: "looser" },
-    { id: 3, label: "Enter", prediction: "uncertain" },
-    { id: 4, label: "Exit", prediction: "winner" },
-    { id: 5, label: "Health", prediction: "looser" },
-    { id: 6, label: "Health", prediction: "looser" },
-    { id: 7, label: "Routine", prediction: "winner" },
-    { id: 8, label: "Health", prediction: "looser" },
-    { id: 9, label: "Enter", prediction: "uncertain" },
-    { id: 10, label: "Exit", prediction: "winner" },
-  ];
+ 
 
   return (
     <div className="w-full py-0">
@@ -81,11 +71,11 @@ const Accordian = ({
                     <div className="flex flex-row text-sm items-center mr-2 transition-opacity duration-500 ease-in ">
                       <div className="mr-2">
                         {prediction === "winner" && <Winner />}
-                        {prediction === "looser" && <Looser />}
+                        {prediction === "loser" && <Looser />}
                         {prediction === "uncertain" && <Uncertain />}
                       </div>
                       {prediction === "winner" && `Winner`}
-                      {prediction === "looser" && `Looser`}
+                      {prediction === "loser" && `Loser`}
                       {prediction === "uncertain" && `New & Worth trying`}
                       <div className="ml-2">
                         <Tooltip
@@ -130,7 +120,6 @@ const Accordian = ({
                     />
                   </div>
                   <div className="flex flex-wrap flex-row">
-                    {" "}
                     {showOptions &&
                       values &&
                       values.map((item) => (

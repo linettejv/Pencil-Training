@@ -16,7 +16,7 @@ const Sidenav = () => {
     <div className="w-[180px] min-w-[180px] h-full flex flex-col justify-between bg-white transition-colors   pb-3 border-r border-gray-3  z-20">
       <div className="px-[20px] overflow-y-auto ">
         <div className="pb-[50px] pt-[27.11px]">
-          <img src="assets/pencil-logo.png" alt="logo" />
+          <img src="assets/images/pencil-logo.png" alt="logo" />
         </div>
 
         <div className="leading-[20px] pt-[2px] ml-[13px] mr-[14px] my-2 text-gray-7 text-base font-semibold flex justify-between flex-row">
