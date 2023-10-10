@@ -6,12 +6,18 @@ import { Insights } from "@/components-ui/icons";
 import { AssetLib } from "@/components-ui/icons";
 import { Speedometer } from "@/components-ui/icons";
 import { BenchMarks } from "@/components-ui/icons";
-
 import { NavigationButton } from "./button/navigation-button";
 import Link from "next/link";
-
+import { useRouter, usePathname } from "next/navigation";
+import { useState } from "react";
 /* eslint-disable @next/next/no-img-element */
 const Sidenav = () => {
+  const router = useRouter();
+
+  const pathname = usePathname();
+
+  const [isActive, setIsActive] = useState(false);
+
   return (
     <div className="w-[180px] min-w-[180px] h-full flex flex-col justify-between bg-white transition-colors   pb-3 border-r border-gray-3  z-20">
       <div className="px-[20px] overflow-y-auto ">
@@ -33,17 +39,16 @@ const Sidenav = () => {
           />
         </Link>
 
-        <Link href="/benchmark">
-          <NavigationButton
-            IconComponent={Insights}
-            label="Insights"
-            imgSrc="assets/icons/benchmarks'.svg"
-          />
-        </Link>
+        <NavigationButton
+          IconComponent={Insights}
+          label="Insights"
+          imgSrc="assets/icons/benchmarks'.svg"
+        />
 
         <Link href="/benchmark">
           <NavigationButton
             IconComponent={BenchMarks}
+            isActive={pathname === "/benchmark"}
             label="Benchmarks"
             imgSrc="assets/icons/benchmarks'.svg"
           />
@@ -67,13 +72,14 @@ const Sidenav = () => {
           imgSrc="assets/icons/asset-library.svg"
         />
 
-        <NavigationButton
-          IconComponent={Projects}
-          label="Copy"
-          isActive={true}
-          imgSrc="assets/icons/insights.svg"
-        />
-
+        <Link href={"/"}>
+          <NavigationButton
+            IconComponent={Projects}
+            label="Copy"
+            isActive={pathname == "/" ? true : false}
+            imgSrc="assets/icons/insights.svg"
+          />
+        </Link>
         <NavigationButton
           IconComponent={Heart}
           label="Templates"

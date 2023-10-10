@@ -29,12 +29,13 @@ export const NavigationButton: FC<NavigationButtonProps> = (
     ? "text-purple-5 bg-purple-2"
     : "text-gray-7  hover:text-black dark:hover:text-gray-5";
   const iconClasses = isActive
-    ? "text-purple-5 opacity-60 dark:text-white"
+    ? "text-purple-5 opacity-60 "
     : "text-gray-5 group-hover:text-gray-6 opacity-100";
+
 
   return (
     <Button
-      classOverride={`group h-8 w-full px-2 rounded-lg ${buttonClasses} ${classOverride}`}
+      classOverride={`group h-8 w-full  px-2 rounded-lg ${buttonClasses} ${classOverride}`}
       id={id}
       onClick={onClick}
     >
