@@ -19,8 +19,9 @@ export const ProductModal = ({
   onProductSelect: (product: any | null) => void;
   isSaveAssetModal?: boolean;
 }) => {
- 
   const [chosenProduct, setChosenProduct] = useState(selectedProduct);
+
+  const [searchKey, setSearchKey] = useState('');
 
   const onSelectButtonClick = () => {
     onProductSelect(chosenProduct);
@@ -32,7 +33,9 @@ export const ProductModal = ({
     closeModal();
   };
 
-  
+  const filteredData = products.filter((item) =>
+    item.displayName.toLowerCase().includes(searchKey.toLowerCase())
+  );
 
   return (
     <Modal
@@ -56,10 +59,12 @@ export const ProductModal = ({
             <InputControlledComponent
               withSearchIcon={true}
               placeholder="Search"
+              value={searchKey}
+              onChange={(e) => setSearchKey(e.target.value)}
             />
             <div className="h-[282px] bg-white border border-gray-3 rounded-lg p-6 space-y-3 overflow-y-scroll">
               <ProductOptions
-                items={products}
+                items={filteredData}
                 onProductChosen={setChosenProduct}
                 chosenProduct={chosenProduct}
               />
