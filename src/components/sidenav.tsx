@@ -8,15 +8,10 @@ import { Speedometer } from "@/components-ui/icons";
 import { BenchMarks } from "@/components-ui/icons";
 import { NavigationButton } from "./button/navigation-button";
 import Link from "next/link";
-import { useRouter, usePathname } from "next/navigation";
-import { useState } from "react";
+import { usePathname } from "next/navigation";
 /* eslint-disable @next/next/no-img-element */
 const Sidenav = () => {
-  const router = useRouter();
-
   const pathname = usePathname();
-
-  const [isActive, setIsActive] = useState(false);
 
   return (
     <div className="w-[180px] min-w-[180px] h-full flex flex-col justify-between bg-white transition-colors   pb-3 border-r border-gray-3  z-20">
@@ -32,6 +27,7 @@ const Sidenav = () => {
 
         <Link href="/projects">
           <NavigationButton
+        
             IconComponent={Ideas}
             label="Ideas"
             isActive={false}

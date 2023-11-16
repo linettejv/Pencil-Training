@@ -35,6 +35,7 @@ export const NavigationButton: FC<NavigationButtonProps> = (
 
   return (
     <Button
+    
       classOverride={`group h-8 w-full  px-2 rounded-lg ${buttonClasses} ${classOverride}`}
       id={id}
       onClick={onClick}
